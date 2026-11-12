@@ -1,0 +1,8 @@
+services:
+  gifts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
