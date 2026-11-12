@@ -4,5 +4,9 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    labels:
-      - "traefik.enable=true"
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
