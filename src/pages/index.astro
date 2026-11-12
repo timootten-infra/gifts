@@ -14,42 +14,40 @@ const grouped = categoryOrder
   .filter((g) => g.items.length > 0);
 
 const totalItems = gifts.length;
+const year = new Date().getFullYear();
 ---
 
 <Layout title="Timo's Wunschliste 🎁">
   <main class="max-w-4xl mx-auto px-4 py-12">
 
-    <!-- Header -->
     <header class="mb-12 text-center">
       <div class="text-5xl mb-4">🎁</div>
-      <h1 class="text-4xl font-bold text-gray-900 mb-2">Timo's Wunschliste</h1>
-      <p class="text-gray-500 text-lg">
+      <h1 class="text-4xl font-bold text-gray-100 mb-2">Timo's Wunschliste</h1>
+      <p class="text-gray-400 text-lg">
         {totalItems} Dinge, die ich gerne hätte – von Snacks bis Getränken.
       </p>
     </header>
 
-    <!-- Legend -->
     <div class="flex flex-wrap gap-3 justify-center mb-10">
       {categoryOrder.map((cat) => {
         const meta = categories[cat];
         return (
-          <span class={`text-sm font-medium px-3 py-1.5 rounded-full ${meta.color}`}>
+          <span class={`text-sm font-medium px-3 py-1.5 rounded-full ${meta.darkColor}`}>
             {meta.emoji} {meta.label}
           </span>
         );
       })}
-      <span class="text-sm px-3 py-1.5 rounded-full bg-gray-100 text-gray-600">
+      <span class="text-sm px-3 py-1.5 rounded-full bg-gray-800 text-gray-400">
         ★★★ = Sehr gerne
       </span>
     </div>
 
-    <!-- Sections per category -->
-    {grouped.map(({ key, meta, items }) => (
+    {grouped.map(({ meta, items }) => (
       <section class="mb-12">
-        <h2 class="text-xl font-semibold text-gray-700 mb-5 flex items-center gap-2">
+        <h2 class="text-xl font-semibold text-gray-300 mb-5 flex items-center gap-2">
           <span>{meta.emoji}</span>
           <span>{meta.label}</span>
-          <span class="ml-2 text-sm font-normal text-gray-400">({items.length})</span>
+          <span class="ml-2 text-sm font-normal text-gray-500">({items.length})</span>
         </h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((gift) => (
@@ -59,9 +57,41 @@ const totalItems = gifts.length;
       </section>
     ))}
 
-    <footer class="text-center text-sm text-gray-400 mt-16 border-t border-gray-100 pt-8">
-      Zuletzt aktualisiert: {new Date().toLocaleDateString("de-DE", { year: "numeric", month: "long", day: "numeric" })}
-    </footer>
-
   </main>
+
+  <footer class="border-t border-gray-800 mt-8">
+    <div class="max-w-4xl mx-auto px-4 py-8 space-y-4">
+
+      <div class="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-500">
+        <span>© {year} Timo Otten</span>
+        <nav class="flex gap-4">
+          <a href="/impressum" class="hover:text-gray-300 transition-colors">Impressum</a>
+        </nav>
+      </div>
+
+      <p class="text-xs text-gray-600 leading-relaxed">
+        Produktbilder stammen von{" "}
+        <a
+          href="https://world.openfoodfacts.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline hover:text-gray-400 transition-colors"
+        >
+          Open Food Facts
+        </a>{" "}
+        und stehen unter der Lizenz{" "}
+        <a
+          href="https://creativecommons.org/licenses/by-sa/3.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline hover:text-gray-400 transition-colors"
+        >
+          CC BY-SA 3.0
+        </a>
+        . Produktnamen und Marken sind Eigentum der jeweiligen Rechteinhaber.
+        Diese Seite ist nicht kommerziell und steht in keiner Verbindung zu den genannten Herstellern.
+      </p>
+
+    </div>
+  </footer>
 </Layout>
