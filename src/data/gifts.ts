@@ -12,6 +12,7 @@ import imgNimm2Plop from "../assets/gifts/nimm2-plop.jpg";
 import imgMonsterRedApple from "../assets/gifts/monster-red-apple.jpg";
 import imgFunnyFrischBakedBbq from "../assets/gifts/funny-frisch-baked-bbq.jpg";
 import imgPomBaerKetchup from "../assets/gifts/pombar-ketchup.jpg";
+import imgSnickers from "../assets/gifts/snickers.jpg";
 
 export type Category = "süßes" | "salziges" | "getränke" | "sonstiges";
 
@@ -163,5 +164,14 @@ export const gifts: Gift[] = [
     priority: 2,
     link: "https://www.amazon.de/s?k=nimm2+Soft+Brause",
     image: imgNimm2Brause,
+  },
+  {
+    id: "snickers",
+    name: "Snickers",
+    description: "Der Schokoriegel mit Erdnüssen und Karamell.",
+    category: "süßes",
+    priority: 2,
+    link: "https://www.amazon.de/s?k=Snickers",
+    image: imgSnickers,
   },
 ];
