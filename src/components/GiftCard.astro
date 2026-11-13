@@ -1,17 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import type { Gift } from "../data/gifts";
 import { categories } from "../data/gifts";
 
 interface Props {
   gift: Gift;
+  priority?: boolean;
 }
 
-const { gift } = Astro.props;
+const { gift, priority = false } = Astro.props;
 
 const priorityLabels = {
-  1: { label: "Nice to have",    stars: "★☆☆", color: "text-gray-400 dark:text-gray-500" },
-  2: { label: "Würde ich gerne", stars: "★★☆", color: "text-amber-400" },
-  3: { label: "Sehr gerne!",     stars: "★★★", color: "text-amber-400" },
+  1: { label: "Nice to have",    stars: "★☆☆", color: "text-gray-600 dark:text-gray-400" },
+  2: { label: "Würde ich gerne", stars: "★★☆", color: "text-amber-600 dark:text-amber-400" },
+  3: { label: "Sehr gerne!",     stars: "★★★", color: "text-amber-600 dark:text-amber-400" },
 };
 
 const cat = categories[gift.category];
@@ -21,10 +23,18 @@ const prio = priorityLabels[gift.priority];
 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
   {gift.image && (
     <div class="h-44 bg-gray-50 dark:bg-gray-900 flex items-center justify-center overflow-hidden">
-      <img
+      <Image
         src={gift.image}
         alt={gift.name}
-        loading="lazy"
+        width={400}
+        height={176}
+        widths={[300, 400, 600]}
+        sizes="(min-width: 1024px) 240px, (min-width: 640px) 320px, 90vw"
+        format="webp"
+        quality={75}
+        loading={priority ? "eager" : "lazy"}
+        fetchpriority={priority ? "high" : "auto"}
+        decoding={priority ? "sync" : "async"}
         class="h-full w-full object-contain p-3"
       />
     </div>
@@ -39,13 +49,13 @@ const prio = priorityLabels[gift.priority];
     </div>
 
     {gift.description && (
-      <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{gift.description}</p>
+      <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{gift.description}</p>
     )}
 
     <div class="flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-700">
       <span class={`text-sm font-medium ${prio.color}`} title={prio.label}>
         {prio.stars}
-        <span class="text-gray-400 dark:text-gray-500 font-normal ml-1">{prio.label}</span>
+        <span class="text-gray-600 dark:text-gray-400 font-normal ml-1">{prio.label}</span>
       </span>
 
       {gift.link && (
@@ -53,7 +63,7 @@ const prio = priorityLabels[gift.priority];
           href={gift.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center gap-1 transition-colors"
+          class="text-sm text-indigo-700 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-medium inline-flex items-center gap-1 transition-colors"
         >
           Ansehen
           <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">

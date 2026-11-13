@@ -42,16 +42,16 @@ const year = new Date().getFullYear();
       </span>
     </div>
 
-    {grouped.map(({ meta, items }) => (
+    {grouped.map(({ meta, items }, gi) => (
       <section class="mb-12">
         <h2 class="text-xl font-semibold text-gray-300 mb-5 flex items-center gap-2">
           <span>{meta.emoji}</span>
           <span>{meta.label}</span>
-          <span class="ml-2 text-sm font-normal text-gray-500">({items.length})</span>
+          <span class="ml-2 text-sm font-normal text-gray-400">({items.length})</span>
         </h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((gift) => (
-            <GiftCard gift={gift} />
+          {items.map((gift, i) => (
+            <GiftCard gift={gift} priority={gi === 0 && i < 2} />
           ))}
         </div>
       </section>
@@ -62,20 +62,20 @@ const year = new Date().getFullYear();
   <footer class="border-t border-gray-800 mt-8">
     <div class="max-w-4xl mx-auto px-4 py-8 space-y-4">
 
-      <div class="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-500">
+      <div class="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-400">
         <span>© {year} Timo Otten</span>
         <nav class="flex gap-4">
           <a href="/impressum" class="hover:text-gray-300 transition-colors">Impressum</a>
         </nav>
       </div>
 
-      <p class="text-xs text-gray-600 leading-relaxed">
+      <p class="text-xs text-gray-400 leading-relaxed">
         Produktbilder stammen von{" "}
         <a
           href="https://world.openfoodfacts.org"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline hover:text-gray-400 transition-colors"
+          class="underline hover:text-gray-200 transition-colors"
         >
           Open Food Facts
         </a>{" "}
@@ -84,7 +84,7 @@ const year = new Date().getFullYear();
           href="https://creativecommons.org/licenses/by-sa/3.0/"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline hover:text-gray-400 transition-colors"
+          class="underline hover:text-gray-200 transition-colors"
         >
           CC BY-SA 3.0
         </a>

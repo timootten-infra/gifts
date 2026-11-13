@@ -1,3 +1,12 @@
+import imgPringlesKetchup from "../assets/gifts/pringles-ketchup.jpg";
+import imgFlyingPowerAldi from "../assets/gifts/flying-power-aldi.jpg";
+import imgHariboGoldbaren from "../assets/gifts/haribo-goldbaren.jpg";
+import imgLaysPaprika from "../assets/gifts/lays-paprika.jpg";
+import imgMonsterUltra from "../assets/gifts/monster-ultra.jpg";
+import imgMilkaOreo from "../assets/gifts/milka-oreo.jpg";
+import imgTortillaChipsNacho from "../assets/gifts/tortilla-chips-nacho.jpg";
+import imgRedbull from "../assets/gifts/redbull.jpg";
+
 export type Category = "süßes" | "salziges" | "getränke" | "sonstiges";
 
 export interface Gift {
@@ -8,11 +17,11 @@ export interface Gift {
   priority: 1 | 2 | 3;
   link?: string;
   /**
-   * Produktbild von Open Food Facts (openfoodfacts.org).
+   * Lokal gehostetes Produktbild von Open Food Facts (openfoodfacts.org).
    * Lizenz: Creative Commons Attribution-ShareAlike (CC BY-SA 3.0 / 4.0)
    * Quelle: https://world.openfoodfacts.org
    */
-  image?: string;
+  image?: ImageMetadata;
 }
 
 export const categories: Record<Category, { label: string; emoji: string; darkColor: string }> = {
@@ -30,7 +39,7 @@ export const gifts: Gift[] = [
     category: "salziges",
     priority: 3,
     link: "https://www.amazon.de/s?k=Pringles+Ketchup",
-    image: "https://images.openfoodfacts.org/images/products/505/399/010/1566/front_fr.65.400.jpg",
+    image: imgPringlesKetchup,
   },
   {
     id: "flying-power-aldi",
@@ -39,7 +48,7 @@ export const gifts: Gift[] = [
     category: "getränke",
     priority: 3,
     link: "https://www.aldi-sued.de/de/p.flying-power-energy-drink.490000000000411601.html",
-    image: "https://images.openfoodfacts.org/images/products/406/145/920/1673/front_en.3.400.jpg",
+    image: imgFlyingPowerAldi,
   },
   {
     id: "haribo-goldbaren",
@@ -48,7 +57,7 @@ export const gifts: Gift[] = [
     category: "süßes",
     priority: 2,
     link: "https://www.amazon.de/s?k=Haribo+Goldb%C3%A4ren",
-    image: "https://images.openfoodfacts.org/images/products/400/168/630/1784/front_fr.24.400.jpg",
+    image: imgHariboGoldbaren,
   },
   {
     id: "lays-paprika",
@@ -57,7 +66,7 @@ export const gifts: Gift[] = [
     category: "salziges",
     priority: 2,
     link: "https://www.amazon.de/s?k=Lays+Paprika",
-    image: "https://images.openfoodfacts.org/images/products/406/213/900/7677/front_de.23.400.jpg",
+    image: imgLaysPaprika,
   },
   {
     id: "monster-ultra",
@@ -66,7 +75,7 @@ export const gifts: Gift[] = [
     category: "getränke",
     priority: 2,
     link: "https://www.amazon.de/s?k=Monster+Ultra+White",
-    image: "https://images.openfoodfacts.org/images/products/506/033/750/0982/front_en.36.400.jpg",
+    image: imgMonsterUltra,
   },
   {
     id: "milka-oreo",
@@ -75,7 +84,7 @@ export const gifts: Gift[] = [
     category: "süßes",
     priority: 3,
     link: "https://www.amazon.de/s?k=Milka+Oreo",
-    image: "https://images.openfoodfacts.org/images/products/762/230/065/0353/front_fr.38.400.jpg",
+    image: imgMilkaOreo,
   },
   {
     id: "tortilla-chips-nacho",
@@ -84,7 +93,7 @@ export const gifts: Gift[] = [
     category: "salziges",
     priority: 2,
     link: "https://www.amazon.de/s?k=Doritos+Nacho+Cheese",
-    image: "https://images.openfoodfacts.org/images/products/002/840/008/7926/front_en.3.400.jpg",
+    image: imgTortillaChipsNacho,
   },
   {
     id: "redbull",
@@ -93,6 +102,6 @@ export const gifts: Gift[] = [
     category: "getränke",
     priority: 1,
     link: "https://www.amazon.de/s?k=Red+Bull+Original",
-    image: "https://images.openfoodfacts.org/images/products/900/249/010/0070/front_en.245.400.jpg",
+    image: imgRedbull,
   },
 ];
