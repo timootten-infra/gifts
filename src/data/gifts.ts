@@ -8,6 +8,10 @@ import imgLiptonEistee from "../assets/gifts/lipton-eistee-zitrone.jpg";
 import imgMioMate from "../assets/gifts/mio-mio-mate.jpg";
 import imgNimm2Softies from "../assets/gifts/nimm2-lachgummi-softies.jpg";
 import imgNimm2Brause from "../assets/gifts/nimm2-soft-brause.jpg";
+import imgNimm2Plop from "../assets/gifts/nimm2-plop.jpg";
+import imgMonsterRedApple from "../assets/gifts/monster-red-apple.jpg";
+import imgFunnyFrischBakedBbq from "../assets/gifts/funny-frisch-baked-bbq.jpg";
+import imgPomBaerKetchup from "../assets/gifts/pombar-ketchup.jpg";
 
 export type Category = "süßes" | "salziges" | "getränke" | "sonstiges";
 
@@ -68,6 +72,7 @@ export const gifts: Gift[] = [
     category: "getränke",
     priority: 3,
     link: "https://www.amazon.de/s?k=Monster+Red+Apple",
+    image: imgMonsterRedApple,
   },
   {
     id: "krombacher-spezi",
@@ -112,6 +117,7 @@ export const gifts: Gift[] = [
     category: "salziges",
     priority: 3,
     link: "https://www.amazon.de/s?k=funny-frisch+Baked+BBQ",
+    image: imgFunnyFrischBakedBbq,
   },
   {
     id: "pringles-ketchup",
@@ -129,14 +135,15 @@ export const gifts: Gift[] = [
     category: "salziges",
     priority: 2,
     link: "https://www.amazon.de/s?k=Pom-B%C3%A4r+Ketchup",
+    image: imgPomBaerKetchup,
   },
   {
     id: "nimm2-lachgummi-softies",
-    name: "nimm2 Lachgummi Softies",
-    description: "Weiche Lachgummis mit Füllung.",
+    name: "nimm2 Lachgummi Softies Joghurt",
+    description: "Weiche Joghurt-Lachgummis, saftig & gefüllt.",
     category: "süßes",
     priority: 3,
-    link: "https://www.amazon.de/s?k=nimm2+Lachgummi+Softies",
+    link: "https://www.amazon.de/s?k=nimm2+Lachgummi+Softies+Joghurt",
     image: imgNimm2Softies,
   },
   {
@@ -146,6 +153,7 @@ export const gifts: Gift[] = [
     category: "süßes",
     priority: 2,
     link: "https://www.amazon.de/s?k=nimm2+Plop",
+    image: imgNimm2Plop,
   },
   {
     id: "nimm2-brause",
