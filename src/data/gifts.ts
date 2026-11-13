@@ -13,6 +13,8 @@ import imgMonsterRedApple from "../assets/gifts/monster-red-apple.jpg";
 import imgFunnyFrischBakedBbq from "../assets/gifts/funny-frisch-baked-bbq.jpg";
 import imgPomBaerKetchup from "../assets/gifts/pombar-ketchup.jpg";
 import imgSnickers from "../assets/gifts/snickers.jpg";
+import imgReweKoreaSalat from "../assets/gifts/rewe-korea-style-salat.jpg";
+import imgMonsterRioPunch from "../assets/gifts/monster-rio-punch.jpg";
 
 export type Category = "süßes" | "salziges" | "getränke" | "sonstiges";
 
@@ -74,6 +76,15 @@ export const gifts: Gift[] = [
     priority: 3,
     link: "https://www.amazon.de/s?k=Monster+Red+Apple",
     image: imgMonsterRedApple,
+  },
+  {
+    id: "monster-rio-punch",
+    name: "Monster Rio Punch",
+    description: "Monster Juiced mit fruchtigem Punch-Geschmack.",
+    category: "getränke",
+    priority: 3,
+    link: "https://www.amazon.de/s?k=Monster+Rio+Punch",
+    image: imgMonsterRioPunch,
   },
   {
     id: "krombacher-spezi",
@@ -173,5 +184,14 @@ export const gifts: Gift[] = [
     priority: 2,
     link: "https://www.amazon.de/s?k=Snickers",
     image: imgSnickers,
+  },
+  {
+    id: "rewe-korea-style-salat",
+    name: "REWE to go Korea-Style Salat",
+    description: "Salat mit Reisnudeln, Hähnchenbrustfilet, Kimchi und Sriracha-Dressing.",
+    category: "sonstiges",
+    priority: 3,
+    link: "https://www.rewe.de/shop/p/rewe-to-go-salat-korea-style-310g/9577956",
+    image: imgReweKoreaSalat,
   },
 ];
