@@ -13,7 +13,6 @@ import imgMonsterRedApple from "../assets/gifts/monster-red-apple.jpg";
 import imgFunnyFrischBakedBbq from "../assets/gifts/funny-frisch-baked-bbq.jpg";
 import imgPomBaerKetchup from "../assets/gifts/pombar-ketchup.jpg";
 import imgSnickers from "../assets/gifts/snickers.jpg";
-import imgReweKoreaSalat from "../assets/gifts/rewe-korea-style-salat.jpg";
 import imgMonsterRioPunch from "../assets/gifts/monster-rio-punch.jpg";
 
 export type Category = "süßes" | "salziges" | "getränke" | "sonstiges";
@@ -192,6 +191,5 @@ export const gifts: Gift[] = [
     category: "sonstiges",
     priority: 3,
     link: "https://www.rewe.de/shop/p/rewe-to-go-salat-korea-style-310g/9577956",
-    image: imgReweKoreaSalat,
   },
 ];
