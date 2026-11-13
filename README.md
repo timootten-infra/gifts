@@ -1,4 +1,4 @@
-# 🎁 Timo's Wunschliste (Gifts)
+# 🎁 Snacks & Drinks (Gifts)
 
 Eine minimalistische und performante Wunschliste, entwickelt mit [Astro](https://astro.build) und [Tailwind CSS v4](https://tailwindcss.com).
 
